@@ -166,7 +166,7 @@ rel.plot <- rel.handparm %>%
   geom_pointrange(aes(ymin = Hand - SD, ymax = Hand + SD)) + 
   geom_line() + 
   th + theme(legend.position = "none") + 
-  labs( x= "", y = "Hand Angles!!!!! (°)") + 
+  labs( x= "", y = "Hand Angles! (°)") + 
   coord_capped_cart(ylim = c(0, 15))
 print(rel.plot)
 
