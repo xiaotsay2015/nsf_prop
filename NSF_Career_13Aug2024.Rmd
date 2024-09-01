@@ -158,7 +158,7 @@ ggsave("tj_plot.pdf",
 
 rel.handparm <- read.table('/Users/jonathantsay/Desktop/Relevance.csv', header=TRUE, sep=",")
 
-rel.handparm$Cond <- factor(rel.handparm$Cond, levels = c("Relevant", "Irrelevant"))
+rel.handparm$Cond <- factor(rel.handparm$Cond, levels = c("Totally Relevant", "Irrelevant"))
 
 rel.plot <- rel.handparm %>% 
   mutate(Cond_2 = 1) %>%
@@ -166,7 +166,7 @@ rel.plot <- rel.handparm %>%
   geom_pointrange(aes(ymin = Hand - SD, ymax = Hand + SD)) + 
   geom_line() + 
   th + theme(legend.position = "none") + 
-  labs( x= "", y = "Hand Angle (°)") + 
+  labs( x= "", y = "Hand Angles! (°)") + 
   coord_capped_cart(ylim = c(0, 15))
 print(rel.plot)
 
@@ -175,6 +175,8 @@ ggsave("rel_plot.pdf",
        plot = rel.plot, height = 3, width = 3,  units = "in")
 
 ```
+
+
 ```{r}
 
 mydf <- data.frame(cond = c("Young", "Old", "Young", "Old"), 
